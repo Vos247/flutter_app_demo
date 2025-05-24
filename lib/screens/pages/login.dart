@@ -1,5 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:get/get.dart';
+import 'package:flutter_app_demo/screens/pages/signUp.dart';
+import 'package:flutter_app_demo/screens/pages/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -72,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           IntlPhoneField(
+                            disableLengthCheck: true, 
                             decoration: InputDecoration(
                               labelText: 'Phone Number',
                               border: OutlineInputBorder(),
@@ -105,7 +110,9 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           SizedBox(height: 50),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(()=> HomePage());
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF4EBE99),
                               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -145,6 +152,11 @@ class _LoginPageState extends State<LoginPage> {
                                         fontWeight: FontWeight.w500,
                                         letterSpacing: 0,
                                       ),
+                                       recognizer:
+                                      TapGestureRecognizer()
+                                        ..onTap = () {
+                                          Get.to(() => SignUp()); // Chuyển trang bằng GetX
+                                        },
                                     ),
                                   ],
                                 ),

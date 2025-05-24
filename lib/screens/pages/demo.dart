@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/pages/login.dart';
+import 'package:flutter_app_demo/screens/pages/signUp.dart';
 import 'package:get/get.dart';
 class Demo extends StatefulWidget {
   const Demo({super.key});
@@ -88,7 +89,7 @@ class _DemoState extends State<Demo> {
                 padding: EdgeInsets.symmetric(horizontal: 50),
                 child: GestureDetector(
                   onTap: () {
-                    // Handle login button tap
+                    Get.to(()=> const SignUp());
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 12),
