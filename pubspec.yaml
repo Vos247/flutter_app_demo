@@ -12,6 +12,7 @@ dependencies:
   get: ^4.6.5
   flutter_screenutil: ^5.7.0
   intl_phone_field: ^3.1.0
+  showcaseview: 2.0.3
     
 
 dev_dependencies:
@@ -25,9 +26,12 @@ flutter:
     - assets/images/Group.png
     - assets/images/Frame.png
     - assets/images/Frame-2.png
-    
-  # fonts:
-  #   - family: IBMPlexSans
-  #     fonts:
-  #       - asset: assets/fonts/IBMPlexSans-VariableFont_wdth,wght.ttf
-  #         weight: 600
+    - assets/images/Frame-3.png
+    - assets/images/Group-1.png
+    - assets/images/Group-2.png
+    - assets/images/Group-3.png
+  fonts:
+    - family: IBMPlexSans
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-VariableFont_wdth,wght.ttf
+          weight: 600

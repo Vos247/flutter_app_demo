@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/pages/login.dart';
-import 'package:flutter_app_demo/screens/pages/signUp.dart';
+import 'package:flutter_app_demo/screens/pages/sign_up.dart';
 import 'package:get/get.dart';
+import 'package:flutter_app_demo/screens/component/app_background.dart';
+import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 class Demo extends StatefulWidget {
   const Demo({super.key});
 
@@ -12,7 +14,8 @@ class Demo extends StatefulWidget {
 class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppBackground(
+    child: Scaffold(
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -133,6 +136,7 @@ class _DemoState extends State<Demo> {
           ),
         ),
       ),
+    )
     );
   }
 }

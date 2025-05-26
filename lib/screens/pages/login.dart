@@ -2,8 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:get/get.dart';
-import 'package:flutter_app_demo/screens/pages/signUp.dart';
+import 'package:flutter_app_demo/screens/pages/sign_up.dart';
 import 'package:flutter_app_demo/screens/pages/home.dart';
+import 'package:flutter_app_demo/screens/component/app_background.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,7 +17,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppBackground(
+      child: Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -171,6 +173,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
       ),
+    )
     );
   }
 }
