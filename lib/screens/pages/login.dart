@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_demo/screens/pages/sign_up.dart';
@@ -46,21 +47,11 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 50),
                   const Text(
                       'Login to TOBE SMART',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Color(0xFFFFFFFF),
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 0,
-                      ),
+                      style: AppTextStyles.size24W700
                     ),
                   const Text(
                       'All social Media Apps are in one Platform',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
-                        fontWeight: FontWeight.w400,
-                        letterSpacing: 0,
-                      ),
+                      style: AppTextStyles.size14W400
                     ),
                 Expanded(
                   child: Container(
@@ -101,12 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                               onPressed: () {},
                               child: const Text(
                                 'Forgot password ?',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xFF4BBD99),
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 0,
-                                ),
+                                style: AppTextStyles.size14W400GreenColor
                               ),
                             ),
                           ),
@@ -124,12 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             child: const Text(
                               'Login',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Color(0xFFFFFFFF),
-                                fontWeight: FontWeight.w700,
-                                letterSpacing: 0,
-                              ),
+                              style: AppTextStyles.size16W700,
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -139,21 +120,11 @@ class _LoginPageState extends State<LoginPage> {
                               RichText(
                                 text: TextSpan(
                                   text: 'Dont have an account? ',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xFF6F6D6D),
-                                    fontWeight: FontWeight.w500,
-                                    letterSpacing: 0,
-                                  ),
+                                  style: AppTextStyles.size16W500Grey,
                                   children: [
                                     TextSpan(
                                       text: 'Sign Up',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xFF4EBE99),
-                                        fontWeight: FontWeight.w500,
-                                        letterSpacing: 0,
-                                      ),
+                                      style: AppTextStyles.size16W500Green,
                                        recognizer:
                                       TapGestureRecognizer()
                                         ..onTap = () {

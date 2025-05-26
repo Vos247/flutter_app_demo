@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:flutter_app_demo/screens/pages/login.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:get/get.dart';
@@ -44,21 +45,11 @@ class _SignUpState extends State<SignUp> {
             SizedBox(height: 60),
             const Text(
               'Sign Up',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Color(0xFFFFFFFF),
-                letterSpacing: 0,
-              ),
+              style: AppTextStyles.size24W700,
             ),
             const Text(
               'All social Media Apps are in one Platform',
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFFFFFFFF),
-                fontWeight: FontWeight.w400,
-                letterSpacing: 0,
-              ),
+              style: AppTextStyles.size14W400
             ),
             SizedBox(height: 20),
             Expanded(
@@ -108,12 +99,7 @@ class _SignUpState extends State<SignUp> {
                             ),
                             child: Text(
                               'Send Code',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Color(0xFFFFFFFF),
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: 0,
-                              ),
+                              style: AppTextStyles.size12W400
                             ),
                           ),
                         ],
@@ -154,12 +140,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         child: const Text(
                           'Sign Up',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFFFFFFFF),
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 0,
-                          ),
+                          style: AppTextStyles.size16W700,
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -169,21 +150,11 @@ class _SignUpState extends State<SignUp> {
                           RichText(
                             text: TextSpan(
                               text: 'Already have an account?',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Color(0xFF6F6D6D),
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: 0,
-                              ),
+                              style: AppTextStyles.size16W500Grey,
                               children: [
                                 TextSpan(
                                   text: 'Log In',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xFF4EBE99),
-                                    fontWeight: FontWeight.w500,
-                                    letterSpacing: 0,
-                                  ),
+                                  style: AppTextStyles.size16W500Green,
                                   recognizer:
                                       TapGestureRecognizer()
                                         ..onTap = () {

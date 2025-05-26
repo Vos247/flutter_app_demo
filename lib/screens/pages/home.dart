@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           ),
           title: const Text(
             'My home',
-            style: AppTextStyles.heading,
+            style: AppTextStyles.size20W700Black,
           ),
           actions: [
             BorderedIconButton(icon: Icons.refresh, onPressed: () {}),
@@ -65,18 +65,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: const Text(
                       'Favourite',
-                      style: TextStyle(color: Colors.white),
+                      style: AppTextStyles.size10W400,
                     ),
                   ),
                   const SizedBox(width: 10),
                   const Expanded(
                     child: Text(
                       'The device has not been assigned a room',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: AppTextStyles.size10W400
                     ),
                   ),
                   MenuDropdown(
@@ -132,12 +128,7 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(width: 4),
                             Text(
                               'Stopping',
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: 0,
-                                fontSize: 7,
-                              ),
+                              style: AppTextStyles.size7W400Red
                             ),
                           ],
                         ),
@@ -150,21 +141,12 @@ class _HomePageState extends State<HomePage> {
                               children: const [
                                 Text(
                                   'xx kiet',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 13,
-                                    letterSpacing: 0,
-                                  ),
+                                  style: AppTextStyles.size13W400black
                                 ),
                                 SizedBox(height: 4),
                                 Text(
                                   'GPSA - 56789',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 6,
-                                    letterSpacing: 0,
-                                  ),
+                                  style: AppTextStyles.size6W400Grey
                                 ),
                               ],
                             ),

@@ -43,15 +43,7 @@ class _DemoState extends State<Demo> {
                 padding: const EdgeInsets.symmetric(horizontal: 49),
                 child: Text(
                   'All social media Apps \n are in one Platform',
-                  style: TextStyle(
-                    // fontFamily: 'IBMPlexSans',
-                    fontSize: 24,
-                    color: Color(0xFFFFFFFF),
-                    fontWeight: FontWeight.w600,
-                    height: 32.5 / 24,
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
+                  style: AppTextStyles.size24W600
                 ),
               ),
               SizedBox(height: 25),
@@ -77,11 +69,7 @@ class _DemoState extends State<Demo> {
                     child: Center(
                       child: Text(
                         'Login',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style: AppTextStyles.size16W700
                       ),
                     ),
                   ),
@@ -110,11 +98,7 @@ class _DemoState extends State<Demo> {
                     child: Center(
                       child: Text(
                         'Sign Up with Gmail',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style: AppTextStyles.size16W700
                       ),
                     ),
                   ),
@@ -123,12 +107,7 @@ class _DemoState extends State<Demo> {
               SizedBox(height: 43),
               Text(
                 'By process you agree to the Privacy policy \n and terms & Conditions',
-                style: TextStyle(
-                  // fontFamily: 'IBMPlexSans',
-                  fontSize: 14,
-                  color: Color(0xFFFFFFFF),
-                  fontWeight: FontWeight.w400,
-                ),
+                style: AppTextStyles.size16W400,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 45),
