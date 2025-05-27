@@ -3,6 +3,8 @@ import 'package:flutter_app_demo/screens/component/bordered_button.dart';
 import 'package:showcaseview/showcaseview.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_app_demo/screens/component/overlay_background.dart';
+import 'package:get/get.dart';
+import 'package:flutter_app_demo/screens/pages/add_device.dart';
 
 class MenuDropdown extends StatefulWidget {
   final void Function(String) onSelected;
@@ -56,7 +58,11 @@ class _MenuDropdownState extends State<MenuDropdown> {
                           'add',
                           'Add Device',
                           BorderedIconButton(
-                            icon: Icon(Icons.add), onPressed: () {}),
+                            icon: Icon(Icons.add), 
+                            onPressed: () {
+                              _removeOverlay();
+                              Get.to(() => const AddDeviceScreen());}
+                            ),
                         ),
                         const Divider(height: 5, color: Colors.grey),
                         _buildItem(

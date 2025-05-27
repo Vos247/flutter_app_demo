@@ -22,7 +22,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets: 
+  assets:
+    - assets/images/iconBrush.png 
+    - assets/images/iconFavorites.png
+    - assets/images/iconMove.png  
     - assets/images/Group.png
     - assets/images/Frame.png
     - assets/images/Frame-2.png
@@ -31,6 +34,9 @@ flutter:
     - assets/images/Group-2.png
     - assets/images/group-3.png
     - assets/images/group-4.png
+    - assets/images/Group-5.png
+    - assets/images/Group-6.png
+
   fonts:
     - family: IBMPlexSans
       fonts:

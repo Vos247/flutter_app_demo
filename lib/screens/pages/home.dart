@@ -34,6 +34,13 @@ class _HomePageState extends State<HomePage> {
               border: Border(
                 bottom: BorderSide(color: Colors.white, width: 60),
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xFF000000),
+                  blurRadius: 4,
+                  offset: Offset(0, 2),
+                ),
+              ]
             ),
           ),
           title: Row(children: [

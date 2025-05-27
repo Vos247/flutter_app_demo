@@ -32,6 +32,8 @@ class BorderedIconButton extends StatelessWidget {
         color: iconColor,
         onPressed: onPressed,
         splashRadius: 12,
+        padding: EdgeInsets.zero,
+        constraints: const BoxConstraints(),
       ),
     );
   }
