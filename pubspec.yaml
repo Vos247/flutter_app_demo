@@ -29,7 +29,8 @@ flutter:
     - assets/images/Frame-3.png
     - assets/images/Group-1.png
     - assets/images/Group-2.png
-    - assets/images/Group-3.png
+    - assets/images/group-3.png
+    - assets/images/group-4.png
   fonts:
     - family: IBMPlexSans
       fonts:

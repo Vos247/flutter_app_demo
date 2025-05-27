@@ -4,6 +4,7 @@ import 'package:flutter_app_demo/screens/component/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/home/menu_dropdown.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:showcaseview/showcaseview.dart';
+import 'package:flutter_app_demo/screens/component/home/menu_options.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,14 +36,23 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          title: const Text(
-            'My home',
-            style: AppTextStyles.size20W700Black,
+          title: Row(children: [
+            const Text(
+              'My home',
+              style: AppTextStyles.size20W700Black,
+            ),
+            const SizedBox(width: 30),
+            Image.asset(
+              'assets/images/group-4.png',
+              height: 9,
+              width: 9,
+            )
+          ]
           ),
           actions: [
-            BorderedIconButton(icon: Icons.refresh, onPressed: () {}),
-            BorderedIconButton(icon: Icons.notifications_none, onPressed: () {},),
-            BorderedIconButton(icon: Icons.add, onPressed: () {}),
+            BorderedIconButton(icon: Icon(Icons.refresh), onPressed: () {}),
+            BorderedIconButton(icon: Icon(Icons.notifications_none), onPressed: () {},),
+            BorderedIconButton(icon: Icon(Icons.add), onPressed: () {}),
           ],
         ),
         body: Column(
@@ -151,7 +161,18 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                             Spacer(),
-                            Icon(Icons.more_vert, color: Colors.grey),
+                            MenuOptions(
+                              onSelected: (value) {
+                                if (value == 'unfavorite') {
+                                  print('Unfavourite selected');
+                                } else if (value == 'see_more') {
+                                  print('See More selected');
+                                } else if (value == 'move') {
+                                  print('Move selected');
+                                }
+                              },
+                              showcaseKey: index == 0 ? GlobalKey() : null,
+                            ),
                           ],
                         ),
                       ],

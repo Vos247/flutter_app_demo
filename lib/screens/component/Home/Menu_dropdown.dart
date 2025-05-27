@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/bordered_button.dart';
 import 'package:showcaseview/showcaseview.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_app_demo/screens/component/overlay_background.dart';
 
 class MenuDropdown extends StatefulWidget {
   final void Function(String) onSelected;
 
-  const MenuDropdown({Key? key, required this.onSelected}) : super(key: key);
+  const MenuDropdown({
+    Key? key, 
+    required this.onSelected}) 
+    : super(key: key);
 
   @override
   State<MenuDropdown> createState() => _MenuDropdownState();
@@ -26,7 +30,6 @@ class _MenuDropdownState extends State<MenuDropdown> {
       }
     });
   }
-
   void _showOverlayMenu() {
     final renderBox =
         _iconPositionKey.currentContext!.findRenderObject() as RenderBox;
@@ -36,12 +39,7 @@ class _MenuDropdownState extends State<MenuDropdown> {
       builder:
           (context) => Stack(
             children: [
-              GestureDetector(
-                onTap: _removeOverlay,
-                child: Container(
-                  color: Colors.black.withOpacity(0.4), // lớp nền tối vừa
-                ),
-              ),
+              OverlayBackground(onTap: _removeOverlay),
               Positioned(
                 top: offset.dy + size.height,
                 right: 16, // điều chỉnh theo layout
@@ -57,14 +55,19 @@ class _MenuDropdownState extends State<MenuDropdown> {
                         _buildItem(
                           'add',
                           'Add Device',
-                          BorderedIconButton(icon: Icons.add, onPressed: () {}),
+                          BorderedIconButton(
+                            icon: Icon(Icons.add), onPressed: () {}),
                         ),
                         const Divider(height: 5, color: Colors.grey),
                         _buildItem(
                           'edit',
-                          'Manage Rooms',
+                          'Manage Rooms', 
                           BorderedIconButton(
-                            icon: Icons.settings,
+                            icon: Image.asset(
+                              'assets/images/group-3.png',
+                              height: 13,
+                              width: 13,
+                            ),
                             onPressed: () {},
                           ),
                         ),
@@ -77,7 +80,6 @@ class _MenuDropdownState extends State<MenuDropdown> {
           ),
     );
     Overlay.of(context).insert(_overlayEntry!);
-
     ShowCaseWidget.of(context).dismiss();
   }
 
