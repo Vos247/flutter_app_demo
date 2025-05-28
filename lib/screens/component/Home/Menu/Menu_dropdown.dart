@@ -4,7 +4,8 @@ import 'package:showcaseview/showcaseview.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_app_demo/screens/component/overlay_background.dart';
 import 'package:get/get.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/add_device.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/addDevice/add_device.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/manage_rooms.dart';
 
 class MenuDropdown extends StatefulWidget {
   final void Function(String) onSelected;
@@ -73,7 +74,9 @@ class _MenuDropdownState extends State<MenuDropdown> {
                               height: 13,
                               width: 13,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              _removeOverlay();
+                              Get.to(()=> const ManageRooms());},
                           ),
                         ),
                       ],

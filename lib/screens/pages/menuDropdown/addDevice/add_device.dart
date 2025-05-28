@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/qrScan/qr_scan.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/addDevice/qr_scan.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_demo/screens/component/common/background_images.dart';
 import 'package:flutter_app_demo/screens/component/common/addDevice/device_Card.dart';

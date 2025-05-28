@@ -45,19 +45,22 @@ class CommonNavbar extends StatelessWidget implements PreferredSizeWidget {
             ],
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Stack(
+            alignment: Alignment.center,
             children: [
               // Back button
               if (showBack)
-                BorderedIconButton(
+              Align(
+                alignment: Alignment.centerLeft,
+                child: BorderedIconButton(
                   icon: const Icon(Icons.arrow_back, color: Colors.white),
                   onPressed: () => Get.back(),
+                ),
                 )
               else
                 const SizedBox(width: 48), // Placeholder để center title
               // Title
-              Expanded(
+              Center(
                 child: Text(
                   title,
                   style: AppTextStyles.size11W700Green,
@@ -65,9 +68,13 @@ class CommonNavbar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               // Actions
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: actions,
+              if(actions.isNotEmpty)
+              Align(
+                alignment: Alignment.centerRight,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: actions,
+                ),
               ),
             ],
           ),

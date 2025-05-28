@@ -4,7 +4,7 @@ import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_demo/screens/pages/login_signUp/sign_up.dart';
-import 'package:flutter_app_demo/screens/pages/home/home.dart';
+import 'package:flutter_app_demo/screens/pages/home.dart';
 import 'package:flutter_app_demo/screens/component/app_background.dart';
 
 class LoginPage extends StatefulWidget {

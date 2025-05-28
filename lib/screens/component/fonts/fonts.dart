@@ -71,6 +71,13 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
   );
+   static const TextStyle size13W700 = TextStyle(
+    fontFamily: 'IBMPlexSans',
+    fontSize: 13,
+    color: Color(0xFFFFFFFF),
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0,
+  );
   static const TextStyle size12W400 = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 12,

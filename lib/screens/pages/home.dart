@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/app_background.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
-import 'package:flutter_app_demo/screens/component/home/menu_dropdown.dart';
+import 'package:flutter_app_demo/screens/component/home/menu/menu_dropdown.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:showcaseview/showcaseview.dart';
-import 'package:flutter_app_demo/screens/component/home/menu_options.dart';
+import 'package:flutter_app_demo/screens/component/home/menu/menu_options.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
