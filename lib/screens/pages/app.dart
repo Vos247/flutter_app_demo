@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_demo/screens/pages/login.dart';
-import 'package:flutter_app_demo/screens/pages/sign_up.dart';
+import 'package:flutter_app_demo/screens/pages/login_signUp/login.dart';
+import 'package:flutter_app_demo/screens/pages/login_signUp/sign_up.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_demo/screens/component/app_background.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
-class Demo extends StatefulWidget {
-  const Demo({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
-  State<Demo> createState() => _DemoState();
+  State<App> createState() => _AppState();
 }
 
-class _DemoState extends State<Demo> {
+class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return AppBackground(

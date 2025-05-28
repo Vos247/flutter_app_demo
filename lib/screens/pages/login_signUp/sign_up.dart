@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
-import 'package:flutter_app_demo/screens/pages/login.dart';
+import 'package:flutter_app_demo/screens/pages/login_signUp/login.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:get/get.dart';
 // import 'package:intl_phone_field/intl_phone_field.dart';
@@ -104,7 +104,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       TextFormField(
                         obscureText: true,
                         decoration: const InputDecoration(
@@ -112,7 +112,7 @@ class _SignUpState extends State<SignUp> {
                           border: OutlineInputBorder(),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       TextFormField(
                         obscureText: true,
                         decoration: const InputDecoration(
@@ -120,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                           border: OutlineInputBorder(),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
@@ -128,7 +128,7 @@ class _SignUpState extends State<SignUp> {
                           border: OutlineInputBorder(),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 5),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
@@ -144,7 +144,7 @@ class _SignUpState extends State<SignUp> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 5),
                       Column(
                         children: <Widget>[
                           RichText(

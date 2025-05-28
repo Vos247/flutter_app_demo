@@ -5,10 +5,10 @@ class OverlayBackground extends StatelessWidget {
   final double opacity;
 
   const OverlayBackground({
-    Key? key,
+    super.key,
     required this.onTap,
     this.opacity = 0.4,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

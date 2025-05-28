@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_demo/screens/component/bordered_button.dart';
+import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:showcaseview/showcaseview.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_app_demo/screens/component/overlay_background.dart';
 import 'package:get/get.dart';
-import 'package:flutter_app_demo/screens/pages/add_device.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/add_device.dart';
 
 class MenuDropdown extends StatefulWidget {
   final void Function(String) onSelected;
 
   const MenuDropdown({
-    Key? key, 
-    required this.onSelected}) 
-    : super(key: key);
+    super.key, 
+    required this.onSelected});
 
   @override
   State<MenuDropdown> createState() => _MenuDropdownState();

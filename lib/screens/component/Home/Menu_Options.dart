@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_demo/screens/component/bordered_button.dart';
+import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:flutter_app_demo/screens/component/overlay_background.dart';
 import 'package:showcaseview/showcaseview.dart';
@@ -8,8 +8,7 @@ class MenuOptions extends StatefulWidget {
   final void Function(String) onSelected;
   final GlobalKey? showcaseKey;
 
-  const MenuOptions({Key? key, required this.onSelected, this.showcaseKey})
-    : super(key: key);
+  const MenuOptions({super.key, required this.onSelected, this.showcaseKey});
 
   @override
   State<MenuOptions> createState() => _MenuOptionsState();
