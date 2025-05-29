@@ -58,7 +58,8 @@ class _MenuDropdownState extends State<MenuDropdown> {
                           'add',
                           'Add Device',
                           BorderedIconButton(
-                            icon: Icon(Icons.add), 
+                            icon: Icon(Icons.add, size: 13),
+                            iconSize: 13, 
                             onPressed: () {
                               _removeOverlay();
                               Get.to(() => const AddDeviceScreen());}

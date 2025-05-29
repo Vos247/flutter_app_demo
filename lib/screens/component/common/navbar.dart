@@ -52,7 +52,7 @@ class CommonNavbar extends StatelessWidget implements PreferredSizeWidget {
               if (showBack)
               Align(
                 alignment: Alignment.centerLeft,
-                child: BorderedIconButton(
+                child: BorderedIconButton(padding: EdgeInsets.symmetric(horizontal: 17, vertical: 9),
                   icon: const Icon(Icons.arrow_back, color: Colors.white),
                   onPressed: () => Get.back(),
                 ),

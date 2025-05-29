@@ -12,7 +12,7 @@ dependencies:
   get: ^4.6.5
   flutter_screenutil: ^5.7.0
   intl_phone_field: ^3.1.0
-  showcaseview: 2.0.3
+  showcaseview: ^4.0.1
   mobile_scanner: ^3.3.0
     
 

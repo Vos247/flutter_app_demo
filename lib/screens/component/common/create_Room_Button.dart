@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
+
 class CreateRoomButton extends StatelessWidget {
-  const CreateRoomButton({super.key});
-  void onPressed() {
-    
-  }
+  const CreateRoomButton({super.key, required this.onCreate});
+  final VoidCallback onCreate;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-      },
-      child: SafeArea(
-        child: Container(
-        height: 42,
+      onTap: onCreate,
+      child: Container(
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [Color(0xFF92AA00), Color(0xFFF9A11B)],
@@ -29,24 +26,15 @@ class CreateRoomButton extends StatelessWidget {
             ),
           ],
         ),
-        alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Create new room',
-              style: AppTextStyles.size13W700,
-            ),
-            SizedBox(
-              height: 35,
-              width: 35,
-              child: BorderedIconButton(icon: Icon(Icons.add, size: 20), onPressed: onPressed),
-            )
+            const Text('Create new room', style: AppTextStyles.size13W700),
+            BorderedIconButton(padding: EdgeInsets.all(1),icon: Icon(Icons.add), iconSize: 30, ),   
           ],
-          )
+        ),
       ),
-    )
     );
   }
 }
