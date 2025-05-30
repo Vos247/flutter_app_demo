@@ -23,6 +23,7 @@ class AddDeviceScreen extends StatelessWidget {
               height: 17,
               width: 17,
             ),
+            padding: EdgeInsets.symmetric(horizontal: 17, vertical: 9),
             onPressed: () => Get.to(() => const QrScanScreen()),
           ),
         ],
