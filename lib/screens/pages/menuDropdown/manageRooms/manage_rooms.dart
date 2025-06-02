@@ -44,8 +44,12 @@ class _ManageRoomsState extends State<ManageRooms> {
             const BackgroundImages(),
             Column(
               children: [
-                const SizedBox(height: 15),
-                ...roomLabels.map((label) => Padding(
+              const SizedBox(height: 15),
+                Expanded(
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: [
+                 ...roomLabels.map((label) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8),
                   child: BoxShadowed(
                     label: label,
@@ -58,7 +62,9 @@ class _ManageRoomsState extends State<ManageRooms> {
                       );
                     },
                   ),
-                )
+                )),
+                ],
+                ),
                 ),
                 Spacer(),
                 Padding(

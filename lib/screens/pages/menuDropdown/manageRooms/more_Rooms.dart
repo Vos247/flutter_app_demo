@@ -20,7 +20,7 @@ class MoreRoom extends StatefulWidget {
 class _MoreRoomState extends State<MoreRoom> {
   String selectedLabel = 'Enter room name (+)';
   bool editable = true;
-
+  bool showCreateButton = true;
   void updateLabel(String label) {
     setState(() {
       selectedLabel = label;
@@ -42,9 +42,10 @@ class _MoreRoomState extends State<MoreRoom> {
         return false;
       }
     }
-    if (permission == LocationPermission.deniedForever) {
+    if (permission == LocationPermission.deniedForever){
+      await Geolocator.openAppSettings();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('You are decline permission location!'))
+        const SnackBar(content: Text('You need permission location on setting to use maps !'))
       );
       return false;
     }
@@ -86,6 +87,11 @@ class _MoreRoomState extends State<MoreRoom> {
                   editable: editable,
                   label: selectedLabel,
                   onChanged: updateLabel,
+                  onTap: () {
+                   setState(() {
+                     showCreateButton = false;
+                   });
+                  },
                 ),
               ),
               Expanded(
@@ -94,14 +100,14 @@ class _MoreRoomState extends State<MoreRoom> {
                   child: SuggestBox(onSelect: updateLabel),
                 ),
               ),
+              if(showCreateButton)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 76),
                 child: CreateRoomButton(
                   onCreate: () async {
-                    print('checking location permission');
                     bool hasPermission = await _ensureLocationPermission(context);
-                    print('permission results: $hasPermission');
                     if(!hasPermission) return;
+                    if(selectedLabel.isEmpty || selectedLabel == 'Enter room name (+)') return;
                     Navigator.pop(context, selectedLabel);
                   },
                 ),

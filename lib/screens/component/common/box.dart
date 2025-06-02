@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 
 class BoxShadowed extends StatefulWidget {
   final String label;
@@ -67,20 +68,14 @@ class _BoxShadowedState extends State<BoxShadowed> {
                   border: InputBorder.none,
                   hintText: 'Enter room name',
                 ),
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: AppTextStyles.size16W400DarkGrey,
                 onChanged: widget.onChanged,
               )
             : Text(
                 widget.label,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w400,
-                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.size16W400DarkGrey
               ),
       ),
     );

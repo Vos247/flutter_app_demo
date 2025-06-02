@@ -50,6 +50,13 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     letterSpacing: 0,
   );
+    static const TextStyle size16W400DarkGrey = TextStyle(
+    fontFamily: 'IBMPlexSans',
+    fontSize: 16,
+    color: Color(0xFFADADAD),
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+  );
   static const TextStyle size16W500Green = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 16,

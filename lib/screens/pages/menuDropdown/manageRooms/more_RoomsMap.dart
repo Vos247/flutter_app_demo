@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/options/Vehicle_management.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/Vehicle_management.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_app_demo/constants/color_palatte.dart';
 import 'package:geolocator/geolocator.dart';
@@ -25,6 +25,7 @@ class _RoomMapScreenState extends State<RoomMapScreen> {
   @override
   void initState() {
     super.initState();
+    _ensureLocationPermission();
     _getCurrentLocation();
     _loadSavedLocation();
   }
@@ -45,6 +46,7 @@ class _RoomMapScreenState extends State<RoomMapScreen> {
     }
   }
   if(permission == LocationPermission.deniedForever){
+    await Geolocator.openAppSettings();
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('You are decline permission location!'))
     );
