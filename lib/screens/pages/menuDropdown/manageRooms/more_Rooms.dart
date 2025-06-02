@@ -6,6 +6,8 @@ import 'package:flutter_app_demo/screens/component/common/create_Room_Button.dar
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:flutter_app_demo/screens/component/common/suggest_box.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MoreRoom extends StatefulWidget {
   const MoreRoom({super.key, required this.selectedLabel});
@@ -24,12 +26,38 @@ class _MoreRoomState extends State<MoreRoom> {
       selectedLabel = label;
     });
   }
-
-  void saveRoom() {
+  Future<bool> _ensureLocationPermission(BuildContext context) async {
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      await Geolocator.openLocationSettings();
+      return false;
+    }
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('You need permission location on this phone.'))
+        );
+        return false;
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('You are decline permission location!'))
+      );
+      return false;
+    }
+    return true;
+  }  
+  void saveRoom() async {
     setState(() {
       editable = false;
     });
-    Navigator.pop(context, selectedLabel);
+    final prefs = await SharedPreferences.getInstance();
+  await prefs.remove('room_${selectedLabel}_lat');
+  await prefs.remove('room_${selectedLabel}_lng');
+  Navigator.pop(context, selectedLabel);
   }
 
   @override
@@ -69,7 +97,11 @@ class _MoreRoomState extends State<MoreRoom> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 76),
                 child: CreateRoomButton(
-                  onCreate: () {
+                  onCreate: () async {
+                    print('checking location permission');
+                    bool hasPermission = await _ensureLocationPermission(context);
+                    print('permission results: $hasPermission');
+                    if(!hasPermission) return;
                     Navigator.pop(context, selectedLabel);
                   },
                 ),
@@ -83,3 +115,5 @@ class _MoreRoomState extends State<MoreRoom> {
     );
   }
 }
+
+

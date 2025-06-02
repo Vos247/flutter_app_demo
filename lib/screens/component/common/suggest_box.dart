@@ -78,7 +78,7 @@ class SuggestBox extends StatelessWidget {
                   ),
                 ],
               );
-            }).toList(),
+            }),
           ],
         ),
       ),
