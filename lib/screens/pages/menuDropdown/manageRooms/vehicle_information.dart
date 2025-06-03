@@ -37,7 +37,7 @@ class _VehicleInformationState extends State<VehicleInformation> {
           RowInput(icon: Image.asset('assets/images/VehicleInformation.png',width: 19,height: 18), 
           title: ('Details'),
           onTap: () => {
-             Navigator.push(context,
+            Navigator.push(context,
             MaterialPageRoute(builder: (context) => DetailVehicle()),
             )
           },

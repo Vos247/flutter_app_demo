@@ -6,6 +6,10 @@ class RowInput extends StatelessWidget {
   final String title;
   final Widget? trailing;
   final VoidCallback? onTap;
+  final bool isInput;
+  final TextEditingController? controller;
+  final bool enabled;
+  
 
   const RowInput({
     super.key,
@@ -13,6 +17,9 @@ class RowInput extends StatelessWidget {
     required this.title,
     this.trailing,
     this.onTap,
+    this.isInput = false,
+    this.controller,
+    this.enabled = true,
   });
 
   @override
@@ -33,7 +40,17 @@ class RowInput extends StatelessWidget {
             ],
             const SizedBox(width: 20),
             Expanded(
-              child: Text(
+              child: isInput ? TextField(
+                controller: controller,
+                enabled: enabled,
+                decoration: InputDecoration(
+                  hintText: title,
+                  border: InputBorder.none,
+                  isDense: true,
+                  contentPadding: EdgeInsets.zero,
+                ),
+                style: AppTextStyles.size10W400Black,
+              ) : Text(
                 title,
                 style: AppTextStyles.size10W400Black,
                 overflow: TextOverflow.ellipsis,
