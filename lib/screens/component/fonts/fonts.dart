@@ -99,10 +99,24 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     letterSpacing: 0,
   );
+      static const TextStyle size12W700Black = TextStyle(
+    fontFamily: 'IBMPlexSans',
+    fontSize: 12,
+    color: Color(0xFF000000),
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0,
+  );
   static const TextStyle size12W400 = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 12,
     color: Color(0xFFFFFFFF),
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+  );
+    static const TextStyle size12W400Black = TextStyle(
+    fontFamily: 'IBMPlexSans',
+    fontSize: 12,
+    color: Color(0xFF000000),
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
   );
@@ -117,6 +131,13 @@ class AppTextStyles {
     fontFamily: 'IBMPlexSans',
     fontSize: 10,
     color: Color(0xFFFFFFFF),
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+  );
+  static const TextStyle size10W400Green = TextStyle(
+    fontFamily: 'IBMPlexSans',
+    fontSize: 10,
+    color: Color(0xFF00C999),
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
   );

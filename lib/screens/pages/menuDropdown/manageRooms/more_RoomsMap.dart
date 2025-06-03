@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/Vehicle_management.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicle_management.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_app_demo/constants/color_palatte.dart';
 import 'package:geolocator/geolocator.dart';

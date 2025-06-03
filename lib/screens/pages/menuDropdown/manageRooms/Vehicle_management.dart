@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/options/input_options.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicle_information.dart';
+import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
 class VehicleManagement extends StatefulWidget{
   const VehicleManagement({super.key});
   @override
@@ -30,7 +31,11 @@ class _VehicleManagementState extends State<VehicleManagement> {
         children: [
           RowInput(icon: Image.asset('assets/images/VehicleInformation.png',width: 19,height: 18), 
           title: ('Vehicle information'),
-          onTap: () => {},
+          onTap: () {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => VehicleInformation()),
+            );
+          },
           ),
           RowInput(icon: Image.asset('assets/images/Vehiclejourney.png',width: 22,height: 25), 
           title: ('Vehicle journey'),

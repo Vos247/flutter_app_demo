@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 
 class RowInput extends StatelessWidget {
-  final Widget icon;
+  final Widget? icon;
   final String title;
+  final Widget? trailing;
   final VoidCallback? onTap;
 
   const RowInput({
     super.key,
-    required this.icon,
+    this.icon,
     required this.title,
+    this.trailing,
     this.onTap,
   });
 
@@ -26,21 +28,19 @@ class RowInput extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-               SizedBox(
-                width: 24,
-                height: 24,
-                child: Center(child: icon)
-               ),
-                const SizedBox(width: 20),
-                Expanded(
-                child: Text(
-                  title, 
-                  style: AppTextStyles.size10W400Black,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                  ),
-                ),
-            const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+            if (icon != null) ...[
+              SizedBox(width: 24, height: 24, child: Center(child: icon)),
+            ],
+            const SizedBox(width: 20),
+            Expanded(
+              child: Text(
+                title,
+                style: AppTextStyles.size10W400Black,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
+            ),
+            trailing ?? const Icon(Icons.arrow_forward_ios, size: 16),
           ],
         ),
       ),
