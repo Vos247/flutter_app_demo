@@ -3,7 +3,7 @@ import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
-import 'package:flutter_app_demo/screens/component/common/VehicleManagement/vehicleCard.dart';
+import 'package:flutter_app_demo/screens/component/common/VehicleManagement/vehicle_Card.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/anti_robbery.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/current_location.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/detail_Vehicle.dart';
