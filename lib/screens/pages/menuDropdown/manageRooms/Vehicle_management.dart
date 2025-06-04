@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicle_information.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehicle_information.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
 class VehicleManagement extends StatefulWidget{
   const VehicleManagement({super.key});

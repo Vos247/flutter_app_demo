@@ -4,7 +4,9 @@ import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/vehicleCard.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/detail_Vehicle.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/anti_robbery.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/current_location.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/detail_Vehicle.dart';
 
 class VehicleInformation extends StatefulWidget{
   const VehicleInformation({super.key});
@@ -44,11 +46,19 @@ class _VehicleInformationState extends State<VehicleInformation> {
           ),
           RowInput(icon: Image.asset('assets/images/currentLocation.png',width: 22,height: 25), 
           title: ('Current location of the vehicle'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CurrentLocation()),
+            )
+          },
           ),
           RowInput(icon: Image.asset('assets/images/Anticheat.png',width: 14,height: 17), 
           title: ('Anti-hacking(Remote On/Off)'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => AntiRobbery()),
+            )
+          },
           ),
           RowInput(icon: 
           Image.asset('assets/images/voltage.png',width: 17,height: 17), 

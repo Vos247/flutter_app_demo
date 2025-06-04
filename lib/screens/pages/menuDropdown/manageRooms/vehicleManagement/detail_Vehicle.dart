@@ -3,7 +3,7 @@ import 'package:flutter_app_demo/screens/component/common/VehicleManagement/inpu
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/edit_Details_Vehicle.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/edit_Details_Vehicle.dart';
 
 
 class DetailVehicle extends StatelessWidget{

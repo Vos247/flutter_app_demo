@@ -10,14 +10,13 @@ import 'package:flutter_app_demo/constants/color_palatte.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class RoomMapScreen extends StatefulWidget {
-  final String roomName;
-  const RoomMapScreen({super.key, required this.roomName});
+class CurrentLocation extends StatefulWidget {
+  const CurrentLocation({super.key});
   @override
-  State<RoomMapScreen> createState() => _RoomMapScreenState();
+  State<CurrentLocation> createState() => _CurrentLocationState();
 }
 
-class _RoomMapScreenState extends State<RoomMapScreen> {
+class _CurrentLocationState extends State<CurrentLocation> {
   LatLng? _currentPosition;
   LatLng? _selectedPosition;
   final Completer<GoogleMapController> _controller = Completer();
@@ -45,8 +44,8 @@ class _RoomMapScreenState extends State<RoomMapScreen> {
   }
   Future<void> _saveLocation(LatLng tappedPoint) async {
   final prefs = await SharedPreferences.getInstance();
-  await prefs.setDouble('room_${widget.roomName}_lat', tappedPoint.latitude);
-  await prefs.setDouble('room_${widget.roomName}_lng', tappedPoint.longitude);
+  await prefs.setDouble('room_${widget}_lat', tappedPoint.latitude);
+  await prefs.setDouble('room_${widget}_lng', tappedPoint.longitude);
 }
   Future<void> _getCurrentLocation() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -75,10 +74,14 @@ class _RoomMapScreenState extends State<RoomMapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonNavbar(
-        title: 'More room',
+        title: 'Current location of the vehicle',
         actions: [
           BorderedIconButton(
-            icon: Icon(Icons.refresh),
+            icon: Image.asset(
+              'assets/images/house.png',
+              height: 16,
+              width: 16,
+            ),
             padding: EdgeInsets.symmetric(horizontal: 17, vertical: 9),
             onPressed: () {},
           ),
@@ -88,7 +91,7 @@ class _RoomMapScreenState extends State<RoomMapScreen> {
         children: [
           GoogleMap(
             initialCameraPosition: CameraPosition(
-              target: _currentPosition ?? LatLng(10.7769, 106.7009),
+              target: _currentPosition ?? LatLng(10.740220, 106.617170),
               zoom: 15,
             ),
             onTap: (LatLng tappedPoint) async {

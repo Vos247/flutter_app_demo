@@ -31,12 +31,7 @@ class _EditVehicleState extends State<EditVehicle> {
         actions: [
           BorderedIconButton(
             icon: Text('SAVE', style: AppTextStyles.size10W400),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EditVehicle()),
-              );
-            },
+            onPressed: () {},
           ),
         ],
       ),
