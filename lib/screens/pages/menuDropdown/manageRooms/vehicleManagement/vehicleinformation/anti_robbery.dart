@@ -57,20 +57,6 @@ class _AntiRobberyState extends State<AntiRobbery> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Chấm xanh
-                Column(
-                  children: [
-                    Container(
-                      width: 10,
-                      height: 10,
-                      margin: const EdgeInsets.only(top: 10),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFF00C999),
-                      ),
-                    ),
-                  ],
-                ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: VehicleControlCard(

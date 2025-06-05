@@ -3,6 +3,7 @@ import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehicle_information.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehiclejourney/vehicle_journey.dart';
 class VehicleManagement extends StatefulWidget{
   const VehicleManagement({super.key});
   @override
@@ -39,7 +40,11 @@ class _VehicleManagementState extends State<VehicleManagement> {
           ),
           RowInput(icon: Image.asset('assets/images/Vehiclejourney.png',width: 22,height: 25), 
           title: ('Vehicle journey'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => VehicleJourney()),
+            )
+          },
           ),
           RowInput(icon: Image.asset('assets/images/Anticheat.png',width: 14,height: 17), 
           title: ('Anti-theft(Turn off/On remotely)'),

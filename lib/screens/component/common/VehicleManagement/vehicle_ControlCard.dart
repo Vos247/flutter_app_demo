@@ -22,12 +22,16 @@ class VehicleControlCard extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(
-          imagePath,
-          width: 60,
-          height: 29,
-          fit: BoxFit.contain,
+        Container(
+          width: 10,
+          height: 10,
+          margin: const EdgeInsets.only(top: 10),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Color(0xFF00C999),
+          ),
         ),
+        Image.asset(imagePath, width: 60, height: 29, fit: BoxFit.contain),
         const SizedBox(width: 12),
         Expanded(
           child: Column(

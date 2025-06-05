@@ -4,8 +4,8 @@ import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/background_images.dart';
 import 'package:flutter_app_demo/screens/component/common/box.dart';
 import 'package:flutter_app_demo/screens/component/common/create_Room_Button.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/more_Rooms.dart';
-import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/more_RoomsMap.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/moreRooms/more_Rooms.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/moreRooms/more_RoomsMap.dart';
 
 class ManageRooms extends StatefulWidget {
   const ManageRooms({super.key});
