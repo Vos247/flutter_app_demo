@@ -3,6 +3,8 @@ import 'package:flutter_app_demo/screens/component/common/VehicleManagement/vehi
 import 'package:flutter_app_demo/screens/component/common/background_images.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
+import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehiclejourney/vehicle_Itinerary.dart';
 import 'package:intl/intl.dart';
 
 class VehicleJourney extends StatefulWidget {
@@ -97,7 +99,7 @@ class _VehicleJourneyState extends State<VehicleJourney> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text('Time'),
+                        const Text('Time', style: AppTextStyles.size10W400Black,),
                         const SizedBox(height: 8),
                         Spacer(),
                         SizedBox(
@@ -123,7 +125,7 @@ class _VehicleJourneyState extends State<VehicleJourney> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text('Form'),
+                        const Text('Form', style: AppTextStyles.size10W400Black,),
                         const SizedBox(height: 16),
                         Spacer(),
                         SizedBox(
@@ -151,7 +153,7 @@ class _VehicleJourneyState extends State<VehicleJourney> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text('To'),
+                        const Text('To', style: AppTextStyles.size10W400Black,),
                         const SizedBox(height: 16),
                         Spacer(),
                         SizedBox(
@@ -182,7 +184,12 @@ class _VehicleJourneyState extends State<VehicleJourney> {
               const SizedBox(height: 30),
               Center(
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => VehicleItinerary()),
+                      );
+                  },
                   child: SizedBox(
                     width: 174,
                     height: 42,
@@ -207,10 +214,7 @@ class _VehicleJourneyState extends State<VehicleJourney> {
                       ),
                       child: const Text(
                         'Agree',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppTextStyles.size16W700
                       ),
                     ),
                   ),
