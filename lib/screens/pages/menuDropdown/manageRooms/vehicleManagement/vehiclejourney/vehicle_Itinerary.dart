@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehiclejourney/vehicle_itinerary_maps.dart';
 
 class VehicleItinerary extends StatelessWidget {
-  const VehicleItinerary ({super.key});
+  const VehicleItinerary({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: CommonNavbar(
@@ -19,14 +20,16 @@ class VehicleItinerary extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(children: [
-            _buildRouteInfoCard(),
+      body: Column(
+        children: [
+          _buildRouteInfoCard(),
           _buildSeeItineraryButton(),
           Expanded(child: _buildItineraryList()),
-      ],
-      )
+        ],
+      ),
     );
   }
+
   Widget _buildRouteInfoCard() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -46,61 +49,57 @@ class VehicleItinerary extends StatelessWidget {
           SizedBox(height: 4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text("Time"),
-              Text("4 hours 21 minutes"),
-            ],
+            children: const [Text("Time"), Text("4 hours 21 minutes")],
           ),
           SizedBox(height: 4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text("Total dwell time"),
-              Text("10:39 a.m"),
-            ],
+            children: const [Text("Total dwell time"), Text("10:39 a.m")],
           ),
         ],
       ),
     );
   }
 
-Widget _buildSeeItineraryButton() {
-  return Container(
-    width: 243,
-    margin: EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      gradient: LinearGradient(
-        colors: [Color(0xFF92AA00), Color(0xFFF9A11B)],
+  Widget _buildSeeItineraryButton() {
+    return Container(
+      width: 243,
+      margin: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF92AA00), Color(0xFFF9A11B)],
+        ),
+        borderRadius: BorderRadius.circular(50),
       ),
-      borderRadius: BorderRadius.circular(50),
-    ),
-    child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 16),
-        shape: StadiumBorder(),
-        backgroundColor: Colors.transparent, // cần để nền trong suốt
-        shadowColor: Colors.transparent, // để không chồng đổ bóng
-      ),
-      onPressed: () {},
-      child: Center(
-        child: Text(
-          "See total itinerary",
-          style: TextStyle(fontSize: 16, color: Colors.white),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 16),
+          shape: StadiumBorder(),
+          backgroundColor: Colors.transparent, // cần để nền trong suốt
+          shadowColor: Colors.transparent, // để không chồng đổ bóng
+        ),
+        onPressed: () {},
+        child: Center(
+          child: Text(
+            "See total itinerary",
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
+
   Widget _buildItineraryList() {
     return ListView.separated(
       itemCount: 3,
       itemBuilder: (context, index) {
-        return _buildItineraryItem();
+        return _buildItineraryItem(context);
       },
       separatorBuilder: (context, index) => const Divider(),
     );
   }
-  Widget _buildItineraryItem() {
+
+  Widget _buildItineraryItem(BuildContext context) {
     return ListTile(
       leading: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +124,12 @@ Widget _buildSeeItineraryButton() {
           Icon(Icons.arrow_forward_ios, size: 16),
         ],
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => VehicleItineraryMaps()),
+        );
+      },
     );
   }
 }
