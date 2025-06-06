@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/anti_theft.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehicle_information.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehicleinformation/anti_robbery.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehiclejourney/vehicle_journey.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/safe_area.dart';
 class VehicleManagement extends StatefulWidget{
   const VehicleManagement({super.key});
   @override
@@ -48,11 +51,19 @@ class _VehicleManagementState extends State<VehicleManagement> {
           ),
           RowInput(icon: Image.asset('assets/images/Anticheat.png',width: 14,height: 17), 
           title: ('Anti-theft(Turn off/On remotely)'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => AntiTheft()),
+            )
+          },
           ),
           RowInput(icon: Image.asset('assets/images/Antitheft.png',width: 17,height: 17), 
           title: ('Anti-theft'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => AntiRobbery()),
+            )
+          },
           ),
           RowInput(icon: Image.asset('assets/images/findCar.png',width: 18,height: 18), 
           title: ('Find a car'),
@@ -60,7 +71,11 @@ class _VehicleManagementState extends State<VehicleManagement> {
           ),
           RowInput(icon: Image.asset('assets/images/SafeArea.png', width: 16, height: 24), 
           title: ('Safe Area'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => SafeAreaScreen()),
+            )
+          },
           ),
           RowInput(icon: Image.asset('assets/images/Crazypressure.png',width: 17,height: 17), 
           title: ('Crazy Pressure'),

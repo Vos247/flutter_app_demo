@@ -102,7 +102,6 @@ class _VehicleItineraryMapsState extends State<VehicleItineraryMaps> {
               ),
             },
           ),
-
           /// Bottom Info Box
           Align(
             alignment: Alignment.bottomCenter,
@@ -151,7 +150,6 @@ class _VehicleItineraryMapsState extends State<VehicleItineraryMaps> {
       ),
     );
   }
-
   Widget _buildNormalBox() {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -198,7 +196,6 @@ class _VehicleItineraryMapsState extends State<VehicleItineraryMaps> {
       ],
     );
   }
-
   Widget _buildInfoRow(String label, String value, {bool isLink = false}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2),
