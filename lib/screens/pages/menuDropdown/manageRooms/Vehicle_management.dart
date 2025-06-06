@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
+import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/warningtimeframe/Warning_time_frame.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/anti_theft.dart';
 import 'package:flutter_app_demo/screens/pages/menuDropdown/manageRooms/vehicleManagement/vehicle_information.dart';
 import 'package:flutter_app_demo/screens/component/common/VehicleManagement/input_options.dart';
@@ -79,11 +80,16 @@ class _VehicleManagementState extends State<VehicleManagement> {
           ),
           RowInput(icon: Image.asset('assets/images/Crazypressure.png',width: 17,height: 17), 
           title: ('Crazy Pressure'),
-          onTap: () => {},
+          onTap: () => {
+          },
           ),
           RowInput(icon: Image.asset('assets/images/Warningtime.png',width: 19,height: 21,), 
           title: ('Warning time frame'),
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context) => WarningTimeFrame()),
+            )
+          },
           ),
           RowInput(icon: Image.asset('assets/images/SetupAlerts.png',width: 17,height: 14.5,), 
           title: ('Set up alerts'),

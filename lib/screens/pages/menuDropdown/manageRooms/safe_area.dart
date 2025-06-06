@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_demo/screens/component/common/VehicleManagement/empty_data.dart';
 import 'package:flutter_app_demo/screens/component/common/bordered_button.dart';
 import 'package:flutter_app_demo/screens/component/common/navbar.dart';
-import 'package:flutter_app_demo/screens/component/fonts/fonts.dart';
 
 class SafeAreaScreen extends StatefulWidget{
   const SafeAreaScreen({super.key});
@@ -28,18 +28,7 @@ class _SafeAreaScreenState extends State<SafeAreaScreen>{
           ),
         ],
       ),
-      body: Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Opacity(
-            opacity: 1,
-            child: Image.asset('assets/images/Safe-Areas.png', height: 250),
-            ),
-            const Text('no data', style: AppTextStyles.size10W700Grey,)
-      ],
-      )
-      ),
+      body: const EmptyDataWidget(),
     );
   }
 }
