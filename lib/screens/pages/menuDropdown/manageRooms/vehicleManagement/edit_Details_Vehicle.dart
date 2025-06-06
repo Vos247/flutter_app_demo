@@ -23,7 +23,7 @@ class _EditVehicleState extends State<EditVehicle> {
     text: 'Car',
   );
   @override
-  Widget build(BuildContext Context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CommonNavbar(
